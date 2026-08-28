@@ -21,7 +21,7 @@ public class OrderProcessor {
     public void processOrder(Order order) {
         if (order == null) throw new IllegalArgumentException("order must not be null");
         System.out.println("Processing order " + order.orderId() + " ...");
-        // วนบนสำเนา — กันผู้รับแก้รายชื่อระหว่างประกาศ
+        // วนบนสำเนา — กันผู้รับแก้รายชื่อระหว่างประกาศ //วนลูปในนี้
         for (OrderObserver o : List.copyOf(observers)) {
             o.update(order);
         }
